@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Sidebar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,14 +11,10 @@ import {
     faList,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { userContext } from "../../../App";
-
-const Sidebar = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(userContext);
-
+const Sidebar = ({ email }) => {
     const [isAdmin, setIsAdmin] = useState([]);
     useEffect(() => {
-        const url = `http://localhost:5000/isAdmin?email=${loggedInUser.email}`;
+        const url = `http://localhost:5000/isAdmin?email=${email}`;
         fetch(url)
             .then((res) => res.json())
             .then((data) => setIsAdmin(data));
@@ -36,7 +32,7 @@ const Sidebar = () => {
             >
                 Style Cut
             </Link>
-            {loggedInUser.email === isAdmin[0]?.email ? (
+            {email === isAdmin[0]?.email ? (
                 <>
                     {/* admin start */}
                     <Link to="/OrderList">

@@ -14,6 +14,7 @@ import OrderList from "./components/OrderList/OrderList";
 import AddService from "./components/AddService/AddService";
 import MakeAdmin from "./components/MakeAdmin/MakeAdmin";
 import ManageService from "./components/ManageService/ManageService";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 export const userContext = createContext();
 
@@ -23,33 +24,33 @@ function App() {
         <userContext.Provider value={[loggedInUser, setLoggedInUser]}>
             <Router>
                 <Switch>
-                    <Route path="/ManageService">
+                    <PrivateRoute path="/ManageService">
                         <ManageService />
-                    </Route>
-                    <Route path="/MakeAdmin">
+                    </PrivateRoute>
+                    <PrivateRoute path="/MakeAdmin">
                         <MakeAdmin />
-                    </Route>
-                    <Route path="/AddService">
+                    </PrivateRoute>
+                    <PrivateRoute path="/AddService">
                         <AddService />
-                    </Route>
-                    <Route path="/OrderList">
+                    </PrivateRoute>
+                    <PrivateRoute path="/OrderList">
                         <OrderList />
-                    </Route>
-                    <Route path="/Review">
+                    </PrivateRoute>
+                    <PrivateRoute path="/Review">
                         <Review />
-                    </Route>
-                    <Route path="/BookList">
+                    </PrivateRoute>
+                    <PrivateRoute path="/BookList">
                         <BookList />
-                    </Route>
-                    <Route path="/Book/:id">
+                    </PrivateRoute>
+                    <PrivateRoute path="/Book/:id">
                         <Book />
-                    </Route>
-                    <Route path="/Book">
+                    </PrivateRoute>
+                    <PrivateRoute path="/Book">
                         <Book />
-                    </Route>
-                    <Route path="/Dashboard">
+                    </PrivateRoute>
+                    <PrivateRoute path="/Dashboard">
                         <DashBoard />
-                    </Route>
+                    </PrivateRoute>
                     <Route path="/LoginAndSignUp">
                         <LoginAndSignUp />
                     </Route>
