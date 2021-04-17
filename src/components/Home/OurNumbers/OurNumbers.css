@@ -1,0 +1,28 @@
+.bg {
+    background-image: url("../../../images/image_2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+}
+
+.card-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-gap: 10px;
+    box-sizing: border-box;
+}
+
+.box-item {
+    width: 280px;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.box-name {
+    padding-top: 25px;
+    text-align: center;
+}
+
+.box-name h3 {
+    font-size: 24px;
+}

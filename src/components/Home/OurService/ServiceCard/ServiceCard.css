@@ -1,0 +1,19 @@
+.box-item-service {
+    width: 280px;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.box-name-service {
+    padding-top: 25px;
+    text-align: center;
+}
+
+.box-name-service h3 {
+    font-size: 24px;
+}
+
+.box-name-service img {
+    width: 100px;
+    border-radius: 100%;
+    height: 100px;
+}

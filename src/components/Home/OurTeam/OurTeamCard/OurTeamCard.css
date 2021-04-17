@@ -1,0 +1,13 @@
+.box-item-team {
+    width: 310px;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.box-name-team {
+    padding-top: 25px;
+    text-align: center;
+}
+
+.box-name-team h3 {
+    font-size: 24px;
+}

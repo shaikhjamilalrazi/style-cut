@@ -1,0 +1,72 @@
+.txt-pass input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 15px 10px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border-bottom: 1px solid #c5c5c5;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.txt-pass input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+}
+
+.signupbtn {
+    background-color: #0f0e1c;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+button:hover {
+    opacity: 1;
+}
+
+.form-container {
+    padding: 26px 46px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.txt-pass h4 {
+    width: 80%;
+    text-align: center;
+    border-bottom: 1px solid #c7c7c7;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+}
+
+.txt-pass h4 span {
+    background: #fff;
+    padding: 0 10px;
+}
+
+.social-login {
+    border: 1px solid #c7c7c7;
+    width: 80%;
+    border-radius: 50px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.social-login h3 {
+    margin: auto;
+}
+
+@media screen and (max-width: 300px) {
+    .signupbtn {
+        width: 100%;
+    }
+}

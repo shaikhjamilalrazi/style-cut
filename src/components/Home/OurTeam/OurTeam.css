@@ -1,0 +1,6 @@
+.card-content-team {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    grid-gap: 10px;
+    box-sizing: border-box;
+}

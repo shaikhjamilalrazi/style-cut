@@ -1,0 +1,25 @@
+.card-content-book {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    grid-gap: 10px;
+    box-sizing: border-box;
+}
+
+.box-item-book {
+    width: 380px;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.box-name-book {
+    padding-top: 25px;
+}
+
+.box-name-book h3 {
+    font-size: 24px;
+}
+
+.box-name-book img {
+    width: 100px;
+    border-radius: 100%;
+    height: 100px;
+}
