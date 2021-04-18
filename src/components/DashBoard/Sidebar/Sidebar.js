@@ -34,8 +34,7 @@ const Sidebar = () => {
             >
                 Style Cut
             </Link>
-            {loggedInUser.email.toLowerCase() ===
-            isAdmin[0]?.email.ttoLowerCase() ? (
+            {loggedInUser.email === isAdmin[0]?.email ? (
                 <>
                     {/* admin start */}
                     <Link to="/OrderList">
