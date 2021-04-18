@@ -157,22 +157,22 @@ const LoginAndSignUp = () => {
                         <span>Or</span>
                     </h4>
                     <div
-                        onClick={hanbleSignInFacebook}
-                        className="social-login mx-auto d-flex"
-                    >
-                        <div className="logo">
-                            <img src={facebook} alt="" />
-                        </div>
-                        <h3>Continue with facebook</h3>
-                    </div>
-                    <div
                         onClick={handleSignInGoogle}
-                        className="social-login mx-auto d-flex mt-3"
+                        className="social-login mx-auto d-flex "
                     >
                         <div className="logo">
                             <img src={Google} alt="" />
                         </div>
                         <h3>Continue with Google</h3>
+                    </div>
+                    <div
+                        onClick={hanbleSignInFacebook}
+                        className="social-login mx-auto mt-3 d-flex"
+                    >
+                        <div className="logo">
+                            <img src={facebook} alt="" />
+                        </div>
+                        <h3>Continue with facebook</h3>
                     </div>
                 </div>
             </div>
