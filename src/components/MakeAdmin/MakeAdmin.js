@@ -14,7 +14,7 @@ const MakeAdmin = () => {
         e.preventDefault();
         const formData = new FormData();
         formData.append("email", info.email);
-        fetch("http://localhost:5000/makeAdmin", {
+        fetch("https://warm-sierra-96362.herokuapp.com/makeAdmin", {
             method: "POST",
             body: formData,
         })

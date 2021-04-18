@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 const Sidebar = ({ email }) => {
     const [isAdmin, setIsAdmin] = useState([]);
     useEffect(() => {
-        const url = `http://localhost:5000/isAdmin?email=${email}`;
+        const url = `https://warm-sierra-96362.herokuapp.com/isAdmin?email=${email}`;
         fetch(url)
             .then((res) => res.json())
             .then((data) => setIsAdmin(data));

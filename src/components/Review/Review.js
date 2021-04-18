@@ -32,7 +32,7 @@ const Review = () => {
             ...info,
         };
 
-        fetch("http://localhost:5000/Remarks", {
+        fetch("https://warm-sierra-96362.herokuapp.com/Remarks", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(bookDetail),

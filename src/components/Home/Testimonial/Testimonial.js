@@ -31,7 +31,7 @@ const Testimonial = () => {
     const testimonialsNew = [...testimonials];
 
     useEffect(() => {
-        fetch("http://localhost:5000/allRemarks")
+        fetch("https://warm-sierra-96362.herokuapp.com/allRemarks")
             .then((res) => res.json())
             .then((data) => setTestimonials(data));
     }, []);

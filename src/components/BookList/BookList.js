@@ -42,7 +42,7 @@ const BookList = () => {
     const [services, setservices] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/Booklist")
+        fetch("https://warm-sierra-96362.herokuapp.com/Booklist")
             .then((res) => res.json())
             .then((data) => setservices(data));
     }, []);

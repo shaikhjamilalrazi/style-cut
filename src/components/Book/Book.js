@@ -20,7 +20,7 @@ const Book = () => {
     };
 
     useEffect(() => {
-        const url = `http://localhost:5000/service/${id}`;
+        const url = `https://warm-sierra-96362.herokuapp.com/service/${id}`;
         fetch(url)
             .then((res) => res.json())
             .then((data) => setProduct(data));
@@ -39,7 +39,7 @@ const Book = () => {
             status,
         };
 
-        fetch("http://localhost:5000/book", {
+        fetch("https://warm-sierra-96362.herokuapp.com/book", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(bookDetail),

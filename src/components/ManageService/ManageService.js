@@ -11,7 +11,7 @@ const ManageService = () => {
     const [allServices, setAllServices] = useState([]);
 
     const fetchProducts = () => {
-        fetch("http://localhost:5000/services")
+        fetch("https://warm-sierra-96362.herokuapp.com/services")
             .then((res) => res.json())
             .then((data) => setAllServices(data));
     };
@@ -21,7 +21,7 @@ const ManageService = () => {
     }, [allServices]);
 
     const deleteService = (id) => {
-        const url = `http://localhost:5000/deleteService/${id}`;
+        const url = `https://warm-sierra-96362.herokuapp.com/deleteService/${id}`;
         fetch(url, {
             method: "DELETE",
             headers: {
