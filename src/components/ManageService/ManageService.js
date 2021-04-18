@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "../DashBoard/Sidebar/Sidebar";
-import "./ManageService.css";
 import ManageServiceCard from "./ManageServiceCard/ManageServiceCard";
+import "./ManageService.css";
 
 const ManageService = () => {
     const manageServiceStyle = {
