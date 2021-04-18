@@ -40,15 +40,24 @@ const ManageService = () => {
 
             <div className="col-lg-10">
                 <h1>Manage Service</h1>
-                <div className="card-content-manageService">
-                    {allServices.map((service) => (
-                        <ManageServiceCard
-                            key={service._id}
-                            service={service}
-                            deleteService={deleteService}
-                        />
-                    ))}
-                </div>
+                {allServices.length === 0 ? (
+                    <div className="text-center">
+                        <div
+                            className="spinner-border text-danger"
+                            role="status"
+                        ></div>
+                    </div>
+                ) : (
+                    <div className="card-content-manageService">
+                        {allServices.map((service) => (
+                            <ManageServiceCard
+                                key={service._id}
+                                service={service}
+                                deleteService={deleteService}
+                            />
+                        ))}
+                    </div>
+                )}
             </div>
         </div>
     );

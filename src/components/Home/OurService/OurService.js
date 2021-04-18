@@ -12,33 +12,6 @@ const OurService = () => {
             .then((data) => setservices(data));
     }, []);
 
-    // const services = [
-    //     {
-    //         id: 1,
-    //         title: "CUTTING",
-    //         description:
-    //             "Lorem ipsum dolor sit amet consectetu adipisicing elit. Libero, voluptates?",
-    //     },
-    //     {
-    //         id: 2,
-    //         title: "STYLING",
-    //         description:
-    //             "Lorem ipsum dolor sit amet consectetu adipisicing elit. Libero, voluptates?",
-    //     },
-    //     {
-    //         id: 3,
-    //         title: "COLOURING",
-    //         description:
-    //             "Lorem ipsum dolor sit amet consectetu adipisicing elit. Libero, voluptates?",
-    //     },
-    //     {
-    //         id: 4,
-    //         title: "FACIALS",
-    //         description:
-    //             "Lorem ipsum dolor sit amet consectetu adipisicing elit. Libero, voluptates?",
-    //     },
-    // ];
-
     const history = useHistory();
 
     const addBooking = (id) => {
@@ -49,15 +22,24 @@ const OurService = () => {
     return (
         <div className="container my-5">
             <h1 className="text-center ">Our Service</h1>
-            <div className="card-content-service">
-                {services.map((service) => (
-                    <ServiceCard
-                        key={service._id}
-                        service={service}
-                        addBooking={addBooking}
-                    />
-                ))}
-            </div>
+            {services.length === 0 ? (
+                <div className="text-center">
+                    <div
+                        className="spinner-border text-danger"
+                        role="status"
+                    ></div>
+                </div>
+            ) : (
+                <div className="card-content-service">
+                    {services.map((service) => (
+                        <ServiceCard
+                            key={service._id}
+                            service={service}
+                            addBooking={addBooking}
+                        />
+                    ))}
+                </div>
+            )}
         </div>
     );
 };

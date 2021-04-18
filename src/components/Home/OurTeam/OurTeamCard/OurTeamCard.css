@@ -1,6 +1,7 @@
 .box-item-team {
     width: 310px;
     background: rgba(255, 255, 255, 0.15);
+    transition: transform 0.3s;
 }
 
 .box-name-team {
@@ -10,4 +11,8 @@
 
 .box-name-team h3 {
     font-size: 24px;
+}
+
+.box-item-team:hover {
+    transform: translateY(-1.5rem) scale(1.03);
 }

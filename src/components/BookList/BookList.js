@@ -8,43 +8,13 @@ const BookList = () => {
         height: "800px",
         width: "100%",
     };
-    // const services = [
-    //     {
-    //         id: 1,
-    //         title: "CUTTING",
-    //         description:
-    //             "Lorem ipsum dolor sit amet consectetu adipisicing elit. Libero, voluptates?",
-    //         status: "Pending",
-    //     },
-    //     {
-    //         id: 2,
-    //         title: "STYLING",
-    //         description:
-    //             "Lorem ipsum dolor sit amet consectetu adipisicing elit. Libero, voluptates?",
-    //         status: "Done",
-    //     },
-    //     {
-    //         id: 3,
-    //         title: "COLOURING",
-    //         description:
-    //             "Lorem ipsum dolor sit amet consectetu adipisicing elit. Libero, voluptates?",
-    //         status: "Pending",
-    //     },
-    //     {
-    //         id: 4,
-    //         title: "FACIALS",
-    //         description:
-    //             "Lorem ipsum dolor sit amet consectetu adipisicing elit. Libero, voluptates?",
-    //         status: "Done",
-    //     },
-    // ];
 
-    const [services, setservices] = useState([]);
+    const [services, setservicesBooking] = useState([]);
 
     useEffect(() => {
         fetch("https://warm-sierra-96362.herokuapp.com/Booklist")
             .then((res) => res.json())
-            .then((data) => setservices(data));
+            .then((data) => setservicesBooking(data));
     }, []);
     return (
         <div className="row" style={bookListStyle}>
@@ -54,11 +24,21 @@ const BookList = () => {
 
             <div className="col-lg-10">
                 <h1>BookList</h1>
-                <div className="card-content-book">
-                    {services.map((service) => (
-                        <BookListCard key={service._id} service={service} />
-                    ))}
-                </div>
+
+                {services.length === 0 ? (
+                    <div className="text-center">
+                        <div
+                            className="spinner-border text-primary"
+                            role="status"
+                        ></div>
+                    </div>
+                ) : (
+                    <div className="card-content-book">
+                        {services.map((service) => (
+                            <BookListCard key={service._id} service={service} />
+                        ))}
+                    </div>
+                )}
             </div>
         </div>
     );

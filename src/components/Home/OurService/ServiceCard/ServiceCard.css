@@ -1,6 +1,7 @@
 .box-item-service {
     width: 280px;
     background: rgba(255, 255, 255, 0.15);
+    transition: transform 0.3s;
 }
 
 .box-name-service {
@@ -16,4 +17,8 @@
     width: 100px;
     border-radius: 100%;
     height: 100px;
+}
+
+.box-item-service:hover {
+    transform: translateY(-1.5rem) scale(1.03);
 }

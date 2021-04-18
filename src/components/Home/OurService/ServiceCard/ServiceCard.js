@@ -20,7 +20,7 @@ const ServiceCard = (props) => {
                 <button
                     type="button"
                     onClick={() => props.addBooking(_id)}
-                    className="btn btn-danger"
+                    className="btn btn-dark"
                 >
                     Buy Now
                 </button>
