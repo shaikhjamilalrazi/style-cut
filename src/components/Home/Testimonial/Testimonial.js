@@ -1,3 +1,4 @@
+import { text } from "@fortawesome/fontawesome-svg-core";
 import React, { useEffect, useState } from "react";
 
 const Testimonial = () => {
@@ -10,8 +11,6 @@ const Testimonial = () => {
             .then((res) => res.json())
             .then((data) => setTestimonials(data));
     }, []);
-
-    console.log(testimonials);
 
     return (
         <div className="container my-5">
@@ -44,7 +43,10 @@ const Testimonial = () => {
                             </div>
 
                             {testimonials?.slice(1).map((testimonial) => (
-                                <div className="carousel-item">
+                                <div
+                                    className="carousel-item"
+                                    key={testimonial._id}
+                                >
                                     <div className="d-flex">
                                         <img
                                             className="img-fluid"
@@ -53,7 +55,7 @@ const Testimonial = () => {
                                                 height: "100px",
                                                 borderRadius: "100%",
                                             }}
-                                            src={testimonials?.photo}
+                                            src={testimonial?.photo}
                                             alt=""
                                         />
                                         <div className="ps-3 w-75">
@@ -93,7 +95,10 @@ const Testimonial = () => {
                             </div>
 
                             {testimonialsNew?.slice(1).map((testimonial) => (
-                                <div className="carousel-item">
+                                <div
+                                    className="carousel-item"
+                                    key={testimonial._id}
+                                >
                                     <div className="d-flex p-3">
                                         <img
                                             className="img-fluid"
@@ -102,7 +107,7 @@ const Testimonial = () => {
                                                 height: "100px",
                                                 borderRadius: "100%",
                                             }}
-                                            src={testimonialsNew?.photo}
+                                            src={testimonial?.photo}
                                             alt=""
                                         />
                                         <div className="ps-3 w-75">
