@@ -15,9 +15,7 @@ const DashBoard = () => {
             </div>
 
             <div className="col-lg-10">
-                <h1 className="text-center">
-                    Welcome {loggedInUser.name} {loggedInUser.email}{" "}
-                </h1>
+                <h1 className="text-center">Welcome {loggedInUser.name}</h1>
             </div>
         </div>
     );

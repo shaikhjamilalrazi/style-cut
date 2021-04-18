@@ -1,30 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-// const testimonials = [
-//     {
-//         name: "jamil",
-//         remark:
-//             "jamil Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, voluptates perferendis qui tempora natus ",
-//     },
-//     {
-//         name: "nobin",
-//         remark:
-//             "nobin Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, voluptates perferendis qui tempora natus ",
-//     },
-//     {
-//         name: "noor",
-//         remark:
-//             "noor Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, voluptates perferendis qui tempora natus ",
-//     },
-//     {
-//         name: "jack",
-//         remark:
-//             "jack Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, voluptates perferendis qui tempora natus porro ",
-//     },
-// ];
-
-// const testimonialsNew = [...testimonials];
-
 const Testimonial = () => {
     const [testimonials, setTestimonials] = useState([]);
 
@@ -35,6 +10,8 @@ const Testimonial = () => {
             .then((res) => res.json())
             .then((data) => setTestimonials(data));
     }, []);
+
+    console.log(testimonials);
 
     return (
         <div className="container my-5">
