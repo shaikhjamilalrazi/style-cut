@@ -11,11 +11,13 @@ const DashBoard = () => {
     return (
         <div className="row" style={DashBoardMainStyle}>
             <div className="col-lg-2">
-                <Sidebar loggedInUser={loggedInUser} />
+                <Sidebar />
             </div>
 
             <div className="col-lg-10">
-                <h1 className="text-center">Welcome {loggedInUser.name}</h1>
+                <h1 className="text-center">
+                    Welcome {loggedInUser.name} {loggedInUser.email}{" "}
+                </h1>
             </div>
         </div>
     );

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Sidebar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,10 +11,12 @@ import {
     faList,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-const Sidebar = ({ email }) => {
+import { userContext } from "../../../App";
+const Sidebar = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(userContext);
     const [isAdmin, setIsAdmin] = useState([]);
     useEffect(() => {
-        const url = `https://warm-sierra-96362.herokuapp.com/isAdmin?email=${email}`;
+        const url = `https://warm-sierra-96362.herokuapp.com/isAdmin?email=${loggedInUser.email}`;
         fetch(url)
             .then((res) => res.json())
             .then((data) => setIsAdmin(data));
@@ -32,7 +34,7 @@ const Sidebar = ({ email }) => {
             >
                 Style Cut
             </Link>
-            {email === isAdmin[0]?.email ? (
+            {loggedInUser.email === isAdmin[0]?.email ? (
                 <>
                     {/* admin start */}
                     <Link to="/OrderList">
