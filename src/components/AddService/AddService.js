@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./AddService.css";
 import Sidebar from "../DashBoard/Sidebar/Sidebar";
 
 const AddService = () => {
