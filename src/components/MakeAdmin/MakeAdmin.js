@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Sidebar from "../DashBoard/Sidebar/Sidebar";
 
 const MakeAdmin = () => {
     const [info, setInfo] = useState({});
+    const nameRef = useRef("");
 
     const handleBlur = (e) => {
         const newInfo = { ...info };
@@ -25,6 +26,7 @@ const MakeAdmin = () => {
             .catch((error) => {
                 console.error(error);
             });
+        nameRef.current.value = "";
     };
 
     const makeAdminStyle = {
@@ -43,6 +45,7 @@ const MakeAdmin = () => {
                     <input
                         name="email"
                         onBlur={handleBlur}
+                        ref={nameRef}
                         type="text"
                         class="form-control"
                         placeholder="Add Email"

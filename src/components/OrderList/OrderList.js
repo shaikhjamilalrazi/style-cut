@@ -14,6 +14,21 @@ const OrderList = () => {
             .then((data) => setServices(data));
     }, []);
 
+    const changeStatus = (event, id) => {
+        const status = event.target.options[event.target.selectedIndex].text;
+        // console.log(status, id);
+        const up = { id, status };
+        fetch(`https://warm-sierra-96362.herokuapp.com/updateStatus/${id}`, {
+            method: "PATCH",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(up),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+            });
+    };
+
     return (
         <div className="row" style={OrderStyle}>
             <div className="col-lg-2">
@@ -51,7 +66,35 @@ const OrderList = () => {
                                         <td>{service.serviceName}</td>
                                         <td>none</td>
                                         <td className="text-center">
-                                            {service.status}
+                                            <select
+                                                class="form-select"
+                                                aria-label="Default select example"
+                                                defaultValue={service.status}
+                                                style={
+                                                    service.status === "Pending"
+                                                        ? { color: "red" }
+                                                        : service.status ===
+                                                          "Done"
+                                                        ? { color: "green" }
+                                                        : { color: "blue" }
+                                                }
+                                                onChange={(event) =>
+                                                    changeStatus(
+                                                        event,
+                                                        service._id
+                                                    )
+                                                }
+                                            >
+                                                <option value="Pending">
+                                                    Pending
+                                                </option>
+                                                <option value="On Going">
+                                                    On Going
+                                                </option>
+                                                <option value="Done">
+                                                    Done
+                                                </option>
+                                            </select>
                                         </td>
                                     </tr>
                                 ))}

@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCut } from "@fortawesome/free-solid-svg-icons";
 import { Link, useRouteMatch } from "react-router-dom";
 import { userContext } from "../../../App";
+import avatar from "../../../images/avater.png";
 
 const Navbar = () => {
     const [loggedInUser] = useContext(userContext);
@@ -72,7 +73,11 @@ const Navbar = () => {
                             )}
                             {loggedInUser.name ? (
                                 <img
-                                    src={loggedInUser.photo}
+                                    src={
+                                        loggedInUser.photo
+                                            ? loggedInUser.photo
+                                            : avatar
+                                    }
                                     style={{
                                         width: "30px",
                                         height: "30px",

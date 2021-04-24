@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Sidebar from "../DashBoard/Sidebar/Sidebar";
 
 const AddService = () => {
@@ -9,6 +9,10 @@ const AddService = () => {
 
     const [info, setInfo] = useState({});
     const [file, setFile] = useState(null);
+
+    const nameRef = useRef("");
+    const nameRef2 = useRef("");
+    const nameRef3 = useRef("");
 
     const handleBlur = (e) => {
         const newInfo = { ...info };
@@ -41,6 +45,9 @@ const AddService = () => {
             .catch((error) => {
                 console.error(error);
             });
+        nameRef.current.value = "";
+        nameRef2.current.value = "";
+        nameRef3.current.value = "";
     };
 
     return (
@@ -63,6 +70,7 @@ const AddService = () => {
                                         className="form-control"
                                         placeholder="Name"
                                         onBlur={handleBlur}
+                                        ref={nameRef}
                                     />
                                 </div>
                                 <div className="form-group p-2">
@@ -74,6 +82,7 @@ const AddService = () => {
                                         name="serviceDescription"
                                         placeholder="Description"
                                         onBlur={handleBlur}
+                                        ref={nameRef2}
                                     ></textarea>
                                 </div>
                             </div>
@@ -83,6 +92,7 @@ const AddService = () => {
                                     <label>Image</label>
                                     <input
                                         onChange={handleFileChange}
+                                        ref={nameRef3}
                                         type="file"
                                         className="form-control"
                                         placeholder="Picture"
